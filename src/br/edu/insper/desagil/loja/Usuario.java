@@ -20,6 +20,7 @@ public class Usuario {
 	
 	private void totalAvaliacoes() {
 		
+		
 	}
 
 	public String getNome() {
