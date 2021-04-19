@@ -12,7 +12,8 @@ public class Vendedor extends Usuario {
 	}
 
 
-	public void cadastraProduto(Produto nome, Produto preco) {
-		produtos.add(nome);
+	public void cadastraProduto(String nome, double preco) {
+		Produto p = new Produto(nome, preco);
+		produtos.add(p);
 	}
 }

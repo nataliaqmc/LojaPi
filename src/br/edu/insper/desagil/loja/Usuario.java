@@ -13,8 +13,9 @@ public class Usuario {
 		this.videos = new ArrayList<>();
 	}
 
-	private void postaVideo(Video id, Video produto) {
-		videos.add(produto);
+	private void postaVideo(int id, String produto) {
+		Video v = new Video(id, this.nome, produto);
+		videos.add(v);
 	}
 	
 	private void totalAvaliacoes() {
