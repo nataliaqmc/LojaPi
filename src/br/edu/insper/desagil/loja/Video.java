@@ -1,26 +1,27 @@
 package br.edu.insper.desagil.loja;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Video {
 	private int id;
 	private Usuario usuario;
 	private Produto produto;
-	private Map<Usuario,Integer> avaliacoes;
+	private Map<String,Integer> avaliacoes;
 	
 	
 	
-	public Video(int id, Usuario usuario, Produto produto, Map<Usuario, Integer> avaliacoes) {
+	public Video(int id, Usuario usuario, Produto produto) {
 		super();
 		this.id = id;
 		this.usuario = usuario;
 		this.produto = produto;
-		this.avaliacoes = avaliacoes;
+		this.avaliacoes = new HashMap<>();
 	}
-	public void AdicionaAvaliacao(Usuario usuario, int inteiro) {
-		if (usuario != this.usuario) {
+	public void adicionaAvaliacao(Usuario usuario, int inteiro) {
+		if (usuario.getNome() != this.usuario.getNome()) {
 			if (inteiro>= 1 && inteiro <= 5) {
-				avaliacoes.put(usuario, inteiro);
+				this.avaliacoes.put(usuario.getNome(), inteiro);
 			}
 		}
 	};

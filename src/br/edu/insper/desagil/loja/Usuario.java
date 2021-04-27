@@ -13,14 +13,18 @@ public class Usuario {
 		this.videos = new ArrayList<>();
 	}
 
-	private void postaVideo(int id, String produto) {
-		Video v = new Video(id, this.nome, produto);
-		videos.add(v);
+	public Video postaVideo(int id, Produto produto) {
+		Video v = new Video(id, this, produto);
+		this.videos.add(v);
+		return v;
 	}
 	
-	private void totalAvaliacoes() {
-		
-		
+	public int totalAvaliacoes() {
+		int s = 0;
+		for (Video video: this.videos) {
+			s += video.mediaAvaliacoes();
+		}
+		return s;
 	}
 
 	public String getNome() {
